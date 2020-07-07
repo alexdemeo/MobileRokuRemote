@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF3069D224B41D2600F3C7E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3069D124B41D2600F3C7E7 /* AppDelegate.swift */; };
+		EF3069D424B41D2600F3C7E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3069D324B41D2600F3C7E7 /* SceneDelegate.swift */; };
+		EF3069D624B41D2600F3C7E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3069D524B41D2600F3C7E7 /* ContentView.swift */; };
+		EF3069D824B41D2700F3C7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3069D724B41D2700F3C7E7 /* Assets.xcassets */; };
+		EF3069DB24B41D2700F3C7E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3069DA24B41D2700F3C7E7 /* Preview Assets.xcassets */; };
+		EF3069DE24B41D2700F3C7E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3069DC24B41D2700F3C7E7 /* LaunchScreen.storyboard */; };
+		EF3069E924B41D2700F3C7E7 /* MyMobileRemoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3069E824B41D2700F3C7E7 /* MyMobileRemoteTests.swift */; };
+		EF3069F424B41D2800F3C7E7 /* MyMobileRemoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3069F324B41D2800F3C7E7 /* MyMobileRemoteUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF3069E524B41D2700F3C7E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3069C624B41D2600F3C7E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF3069CD24B41D2600F3C7E7;
+			remoteInfo = MyMobileRemote;
+		};
+		EF3069F024B41D2800F3C7E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3069C624B41D2600F3C7E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF3069CD24B41D2600F3C7E7;
+			remoteInfo = MyMobileRemote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF3069CE24B41D2600F3C7E7 /* MyMobileRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMobileRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3069D124B41D2600F3C7E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF3069D324B41D2600F3C7E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EF3069D524B41D2600F3C7E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF3069D724B41D2700F3C7E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF3069DA24B41D2700F3C7E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EF3069DD24B41D2700F3C7E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF3069DF24B41D2700F3C7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3069E424B41D2700F3C7E7 /* MyMobileRemoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMobileRemoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3069E824B41D2700F3C7E7 /* MyMobileRemoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMobileRemoteTests.swift; sourceTree = "<group>"; };
+		EF3069EA24B41D2700F3C7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3069EF24B41D2800F3C7E7 /* MyMobileRemoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMobileRemoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3069F324B41D2800F3C7E7 /* MyMobileRemoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMobileRemoteUITests.swift; sourceTree = "<group>"; };
+		EF3069F524B41D2800F3C7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF3069CB24B41D2600F3C7E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3069E124B41D2700F3C7E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3069EC24B41D2800F3C7E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF3069C524B41D2600F3C7E7 = {
+			isa = PBXGroup;
+			children = (
+				EF3069D024B41D2600F3C7E7 /* MyMobileRemote */,
+				EF3069E724B41D2700F3C7E7 /* MyMobileRemoteTests */,
+				EF3069F224B41D2800F3C7E7 /* MyMobileRemoteUITests */,
+				EF3069CF24B41D2600F3C7E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF3069CF24B41D2600F3C7E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF3069CE24B41D2600F3C7E7 /* MyMobileRemote.app */,
+				EF3069E424B41D2700F3C7E7 /* MyMobileRemoteTests.xctest */,
+				EF3069EF24B41D2800F3C7E7 /* MyMobileRemoteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF3069D024B41D2600F3C7E7 /* MyMobileRemote */ = {
+			isa = PBXGroup;
+			children = (
+				EF3069D124B41D2600F3C7E7 /* AppDelegate.swift */,
+				EF3069D324B41D2600F3C7E7 /* SceneDelegate.swift */,
+				EF3069D524B41D2600F3C7E7 /* ContentView.swift */,
+				EF3069D724B41D2700F3C7E7 /* Assets.xcassets */,
+				EF3069DC24B41D2700F3C7E7 /* LaunchScreen.storyboard */,
+				EF3069DF24B41D2700F3C7E7 /* Info.plist */,
+				EF3069D924B41D2700F3C7E7 /* Preview Content */,
+			);
+			path = MyMobileRemote;
+			sourceTree = "<group>";
+		};
+		EF3069D924B41D2700F3C7E7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EF3069DA24B41D2700F3C7E7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EF3069E724B41D2700F3C7E7 /* MyMobileRemoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF3069E824B41D2700F3C7E7 /* MyMobileRemoteTests.swift */,
+				EF3069EA24B41D2700F3C7E7 /* Info.plist */,
+			);
+			path = MyMobileRemoteTests;
+			sourceTree = "<group>";
+		};
+		EF3069F224B41D2800F3C7E7 /* MyMobileRemoteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF3069F324B41D2800F3C7E7 /* MyMobileRemoteUITests.swift */,
+				EF3069F524B41D2800F3C7E7 /* Info.plist */,
+			);
+			path = MyMobileRemoteUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF3069CD24B41D2600F3C7E7 /* MyMobileRemote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF3069F824B41D2800F3C7E7 /* Build configuration list for PBXNativeTarget "MyMobileRemote" */;
+			buildPhases = (
+				EF3069CA24B41D2600F3C7E7 /* Sources */,
+				EF3069CB24B41D2600F3C7E7 /* Frameworks */,
+				EF3069CC24B41D2600F3C7E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyMobileRemote;
+			productName = MyMobileRemote;
+			productReference = EF3069CE24B41D2600F3C7E7 /* MyMobileRemote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF3069E324B41D2700F3C7E7 /* MyMobileRemoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF3069FB24B41D2800F3C7E7 /* Build configuration list for PBXNativeTarget "MyMobileRemoteTests" */;
+			buildPhases = (
+				EF3069E024B41D2700F3C7E7 /* Sources */,
+				EF3069E124B41D2700F3C7E7 /* Frameworks */,
+				EF3069E224B41D2700F3C7E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF3069E624B41D2700F3C7E7 /* PBXTargetDependency */,
+			);
+			name = MyMobileRemoteTests;
+			productName = MyMobileRemoteTests;
+			productReference = EF3069E424B41D2700F3C7E7 /* MyMobileRemoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF3069EE24B41D2800F3C7E7 /* MyMobileRemoteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF3069FE24B41D2800F3C7E7 /* Build configuration list for PBXNativeTarget "MyMobileRemoteUITests" */;
+			buildPhases = (
+				EF3069EB24B41D2800F3C7E7 /* Sources */,
+				EF3069EC24B41D2800F3C7E7 /* Frameworks */,
+				EF3069ED24B41D2800F3C7E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF3069F124B41D2800F3C7E7 /* PBXTargetDependency */,
+			);
+			name = MyMobileRemoteUITests;
+			productName = MyMobileRemoteUITests;
+			productReference = EF3069EF24B41D2800F3C7E7 /* MyMobileRemoteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF3069C624B41D2600F3C7E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Alex DeMeo";
+				TargetAttributes = {
+					EF3069CD24B41D2600F3C7E7 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					EF3069E324B41D2700F3C7E7 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = EF3069CD24B41D2600F3C7E7;
+					};
+					EF3069EE24B41D2800F3C7E7 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = EF3069CD24B41D2600F3C7E7;
+					};
+				};
+			};
+			buildConfigurationList = EF3069C924B41D2600F3C7E7 /* Build configuration list for PBXProject "MyMobileRemote" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF3069C524B41D2600F3C7E7;
+			productRefGroup = EF3069CF24B41D2600F3C7E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF3069CD24B41D2600F3C7E7 /* MyMobileRemote */,
+				EF3069E324B41D2700F3C7E7 /* MyMobileRemoteTests */,
+				EF3069EE24B41D2800F3C7E7 /* MyMobileRemoteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF3069CC24B41D2600F3C7E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3069DE24B41D2700F3C7E7 /* LaunchScreen.storyboard in Resources */,
+				EF3069DB24B41D2700F3C7E7 /* Preview Assets.xcassets in Resources */,
+				EF3069D824B41D2700F3C7E7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3069E224B41D2700F3C7E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3069ED24B41D2800F3C7E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF3069CA24B41D2600F3C7E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3069D224B41D2600F3C7E7 /* AppDelegate.swift in Sources */,
+				EF3069D424B41D2600F3C7E7 /* SceneDelegate.swift in Sources */,
+				EF3069D624B41D2600F3C7E7 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3069E024B41D2700F3C7E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3069E924B41D2700F3C7E7 /* MyMobileRemoteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3069EB24B41D2800F3C7E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3069F424B41D2800F3C7E7 /* MyMobileRemoteUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF3069E624B41D2700F3C7E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF3069CD24B41D2600F3C7E7 /* MyMobileRemote */;
+			targetProxy = EF3069E524B41D2700F3C7E7 /* PBXContainerItemProxy */;
+		};
+		EF3069F124B41D2800F3C7E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF3069CD24B41D2600F3C7E7 /* MyMobileRemote */;
+			targetProxy = EF3069F024B41D2800F3C7E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF3069DC24B41D2700F3C7E7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF3069DD24B41D2700F3C7E7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF3069F624B41D2800F3C7E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF3069F724B41D2800F3C7E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF3069F924B41D2800F3C7E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MyMobileRemote/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MyMobileRemote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wheresthevolume.MyMobileRemote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF3069FA24B41D2800F3C7E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MyMobileRemote/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MyMobileRemote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wheresthevolume.MyMobileRemote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EF3069FC24B41D2800F3C7E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyMobileRemoteTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wheresthevolume.MyMobileRemoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyMobileRemote.app/MyMobileRemote";
+			};
+			name = Debug;
+		};
+		EF3069FD24B41D2800F3C7E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyMobileRemoteTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wheresthevolume.MyMobileRemoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyMobileRemote.app/MyMobileRemote";
+			};
+			name = Release;
+		};
+		EF3069FF24B41D2800F3C7E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyMobileRemoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wheresthevolume.MyMobileRemoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyMobileRemote;
+			};
+			name = Debug;
+		};
+		EF306A0024B41D2800F3C7E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyMobileRemoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wheresthevolume.MyMobileRemoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyMobileRemote;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF3069C924B41D2600F3C7E7 /* Build configuration list for PBXProject "MyMobileRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3069F624B41D2800F3C7E7 /* Debug */,
+				EF3069F724B41D2800F3C7E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF3069F824B41D2800F3C7E7 /* Build configuration list for PBXNativeTarget "MyMobileRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3069F924B41D2800F3C7E7 /* Debug */,
+				EF3069FA24B41D2800F3C7E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF3069FB24B41D2800F3C7E7 /* Build configuration list for PBXNativeTarget "MyMobileRemoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3069FC24B41D2800F3C7E7 /* Debug */,
+				EF3069FD24B41D2800F3C7E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF3069FE24B41D2800F3C7E7 /* Build configuration list for PBXNativeTarget "MyMobileRemoteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3069FF24B41D2800F3C7E7 /* Debug */,
+				EF306A0024B41D2800F3C7E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF3069C624B41D2600F3C7E7 /* Project object */;
+}
