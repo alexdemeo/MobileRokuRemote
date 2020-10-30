@@ -7,14 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF3069D224B41D2600F3C7E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3069D124B41D2600F3C7E7 /* AppDelegate.swift */; };
+		EF28950024B426C2005E0CB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2894FF24B426C2005E0CB8 /* AppDelegate.swift */; };
 		EF3069D424B41D2600F3C7E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3069D324B41D2600F3C7E7 /* SceneDelegate.swift */; };
-		EF3069D624B41D2600F3C7E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3069D524B41D2600F3C7E7 /* ContentView.swift */; };
 		EF3069D824B41D2700F3C7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3069D724B41D2700F3C7E7 /* Assets.xcassets */; };
 		EF3069DB24B41D2700F3C7E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3069DA24B41D2700F3C7E7 /* Preview Assets.xcassets */; };
 		EF3069DE24B41D2700F3C7E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3069DC24B41D2700F3C7E7 /* LaunchScreen.storyboard */; };
 		EF3069E924B41D2700F3C7E7 /* MyMobileRemoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3069E824B41D2700F3C7E7 /* MyMobileRemoteTests.swift */; };
 		EF3069F424B41D2800F3C7E7 /* MyMobileRemoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3069F324B41D2800F3C7E7 /* MyMobileRemoteUITests.swift */; };
+		EF306A0424B41D3D00F3C7E7 /* settings.json in Resources */ = {isa = PBXBuildFile; fileRef = EF306A0224B41D3D00F3C7E7 /* settings.json */; };
+		EF306A0524B41D3D00F3C7E7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A0324B41D3D00F3C7E7 /* Settings.swift */; };
+		EF306A0D24B41D4B00F3C7E7 /* RemoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A0724B41D4B00F3C7E7 /* RemoteButton.swift */; };
+		EF306A0E24B41D4B00F3C7E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A0924B41D4B00F3C7E7 /* Constants.swift */; };
+		EF306A0F24B41D4B00F3C7E7 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A0A24B41D4B00F3C7E7 /* Buttons.swift */; };
+		EF306A1024B41D4B00F3C7E7 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A0B24B41D4B00F3C7E7 /* Errors.swift */; };
+		EF306A1124B41D4B00F3C7E7 /* RemoteTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A0C24B41D4B00F3C7E7 /* RemoteTypes.swift */; };
+		EF306A1C24B41DCE00F3C7E7 /* ContentViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A1324B41DCE00F3C7E7 /* ContentViewMain.swift */; };
+		EF306A2124B41DCE00F3C7E7 /* ContentViewRokuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A1924B41DCE00F3C7E7 /* ContentViewRokuButtons.swift */; };
+		EF306A2224B41DCE00F3C7E7 /* ContentViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A1A24B41DCE00F3C7E7 /* ContentViewSettings.swift */; };
+		EF7D2CE3252C1C7900E56AB2 /* CompGroupedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CDD252C1C7900E56AB2 /* CompGroupedView.swift */; };
+		EF7D2CE4252C1C7900E56AB2 /* CompArrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CDE252C1C7900E56AB2 /* CompArrows.swift */; };
+		EF7D2CE5252C1C7900E56AB2 /* CompRokuDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CDF252C1C7900E56AB2 /* CompRokuDevices.swift */; };
+		EF7D2CE6252C1C7900E56AB2 /* CompDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CE0252C1C7900E56AB2 /* CompDevices.swift */; };
+		EF7D2CE7252C1C7900E56AB2 /* CompStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CE1252C1C7900E56AB2 /* CompStatus.swift */; };
+		EF7D2CE8252C1C7900E56AB2 /* CompTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CE2252C1C7900E56AB2 /* CompTop.swift */; };
+		EF7D2CED252C1CAF00E56AB2 /* RokuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CEC252C1CAF00E56AB2 /* RokuApp.swift */; };
+		EF7D2CF8252C2D8900E56AB2 /* CompKeyboardPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CF7252C2D8900E56AB2 /* CompKeyboardPanel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +51,33 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EFB84AB6254608AE005B2C3A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFB84AE1254610D4005B2C3A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		EF2894FF24B426C2005E0CB8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF3069CE24B41D2600F3C7E7 /* MyMobileRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMobileRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF3069D124B41D2600F3C7E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF3069D324B41D2600F3C7E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EF3069D524B41D2600F3C7E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF3069D724B41D2700F3C7E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF3069DA24B41D2700F3C7E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF3069DD24B41D2700F3C7E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +88,26 @@
 		EF3069EF24B41D2800F3C7E7 /* MyMobileRemoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMobileRemoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3069F324B41D2800F3C7E7 /* MyMobileRemoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMobileRemoteUITests.swift; sourceTree = "<group>"; };
 		EF3069F524B41D2800F3C7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF306A0224B41D3D00F3C7E7 /* settings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = settings.json; sourceTree = "<group>"; };
+		EF306A0324B41D3D00F3C7E7 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		EF306A0724B41D4B00F3C7E7 /* RemoteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteButton.swift; sourceTree = "<group>"; };
+		EF306A0924B41D4B00F3C7E7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EF306A0A24B41D4B00F3C7E7 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		EF306A0B24B41D4B00F3C7E7 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		EF306A0C24B41D4B00F3C7E7 /* RemoteTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteTypes.swift; sourceTree = "<group>"; };
+		EF306A1324B41DCE00F3C7E7 /* ContentViewMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewMain.swift; sourceTree = "<group>"; };
+		EF306A1924B41DCE00F3C7E7 /* ContentViewRokuButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewRokuButtons.swift; sourceTree = "<group>"; };
+		EF306A1A24B41DCE00F3C7E7 /* ContentViewSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewSettings.swift; sourceTree = "<group>"; };
+		EF7D2CDD252C1C7900E56AB2 /* CompGroupedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompGroupedView.swift; sourceTree = "<group>"; };
+		EF7D2CDE252C1C7900E56AB2 /* CompArrows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompArrows.swift; sourceTree = "<group>"; };
+		EF7D2CDF252C1C7900E56AB2 /* CompRokuDevices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompRokuDevices.swift; sourceTree = "<group>"; };
+		EF7D2CE0252C1C7900E56AB2 /* CompDevices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompDevices.swift; sourceTree = "<group>"; };
+		EF7D2CE1252C1C7900E56AB2 /* CompStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompStatus.swift; sourceTree = "<group>"; };
+		EF7D2CE2252C1C7900E56AB2 /* CompTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompTop.swift; sourceTree = "<group>"; };
+		EF7D2CEC252C1CAF00E56AB2 /* RokuApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RokuApp.swift; sourceTree = "<group>"; };
+		EF7D2CF7252C2D8900E56AB2 /* CompKeyboardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompKeyboardPanel.swift; sourceTree = "<group>"; };
+		EFB84AA6254608AE005B2C3A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		EFB84AA8254608AE005B2C3A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +141,7 @@
 				EF3069D024B41D2600F3C7E7 /* MyMobileRemote */,
 				EF3069E724B41D2700F3C7E7 /* MyMobileRemoteTests */,
 				EF3069F224B41D2800F3C7E7 /* MyMobileRemoteUITests */,
+				EFB84AA5254608AE005B2C3A /* Frameworks */,
 				EF3069CF24B41D2600F3C7E7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,9 +159,11 @@
 		EF3069D024B41D2600F3C7E7 /* MyMobileRemote */ = {
 			isa = PBXGroup;
 			children = (
-				EF3069D124B41D2600F3C7E7 /* AppDelegate.swift */,
+				EF306A1224B41DCE00F3C7E7 /* ui */,
+				EF306A0624B41D4B00F3C7E7 /* core */,
+				EF306A0124B41D3D00F3C7E7 /* settings */,
 				EF3069D324B41D2600F3C7E7 /* SceneDelegate.swift */,
-				EF3069D524B41D2600F3C7E7 /* ContentView.swift */,
+				EF2894FF24B426C2005E0CB8 /* AppDelegate.swift */,
 				EF3069D724B41D2700F3C7E7 /* Assets.xcassets */,
 				EF3069DC24B41D2700F3C7E7 /* LaunchScreen.storyboard */,
 				EF3069DF24B41D2700F3C7E7 /* Info.plist */,
@@ -136,6 +198,70 @@
 			path = MyMobileRemoteUITests;
 			sourceTree = "<group>";
 		};
+		EF306A0124B41D3D00F3C7E7 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				EF306A0224B41D3D00F3C7E7 /* settings.json */,
+				EF306A0324B41D3D00F3C7E7 /* Settings.swift */,
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		EF306A0624B41D4B00F3C7E7 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				EF306A0824B41D4B00F3C7E7 /* constants */,
+				EF7D2CEC252C1CAF00E56AB2 /* RokuApp.swift */,
+				EF306A0724B41D4B00F3C7E7 /* RemoteButton.swift */,
+				EF306A0B24B41D4B00F3C7E7 /* Errors.swift */,
+				EF306A0C24B41D4B00F3C7E7 /* RemoteTypes.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		EF306A0824B41D4B00F3C7E7 /* constants */ = {
+			isa = PBXGroup;
+			children = (
+				EF306A0924B41D4B00F3C7E7 /* Constants.swift */,
+				EF306A0A24B41D4B00F3C7E7 /* Buttons.swift */,
+			);
+			path = constants;
+			sourceTree = "<group>";
+		};
+		EF306A1224B41DCE00F3C7E7 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				EF306A1524B41DCE00F3C7E7 /* components */,
+				EF306A1324B41DCE00F3C7E7 /* ContentViewMain.swift */,
+				EF306A1924B41DCE00F3C7E7 /* ContentViewRokuButtons.swift */,
+				EF306A1A24B41DCE00F3C7E7 /* ContentViewSettings.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		EF306A1524B41DCE00F3C7E7 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				EF7D2CDE252C1C7900E56AB2 /* CompArrows.swift */,
+				EF7D2CE0252C1C7900E56AB2 /* CompDevices.swift */,
+				EF7D2CDD252C1C7900E56AB2 /* CompGroupedView.swift */,
+				EF7D2CDF252C1C7900E56AB2 /* CompRokuDevices.swift */,
+				EF7D2CE1252C1C7900E56AB2 /* CompStatus.swift */,
+				EF7D2CE2252C1C7900E56AB2 /* CompTop.swift */,
+				EF7D2CF7252C2D8900E56AB2 /* CompKeyboardPanel.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		EFB84AA5254608AE005B2C3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFB84AA6254608AE005B2C3A /* WidgetKit.framework */,
+				EFB84AA8254608AE005B2C3A /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +272,8 @@
 				EF3069CA24B41D2600F3C7E7 /* Sources */,
 				EF3069CB24B41D2600F3C7E7 /* Frameworks */,
 				EF3069CC24B41D2600F3C7E7 /* Resources */,
+				EFB84AB6254608AE005B2C3A /* Embed App Extensions */,
+				EFB84AE1254610D4005B2C3A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,8 +326,8 @@
 		EF3069C624B41D2600F3C7E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Alex DeMeo";
 				TargetAttributes = {
 					EF3069CD24B41D2600F3C7E7 = {
@@ -242,6 +370,7 @@
 			files = (
 				EF3069DE24B41D2700F3C7E7 /* LaunchScreen.storyboard in Resources */,
 				EF3069DB24B41D2700F3C7E7 /* Preview Assets.xcassets in Resources */,
+				EF306A0424B41D3D00F3C7E7 /* settings.json in Resources */,
 				EF3069D824B41D2700F3C7E7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,9 +396,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF3069D224B41D2600F3C7E7 /* AppDelegate.swift in Sources */,
+				EF7D2CE7252C1C7900E56AB2 /* CompStatus.swift in Sources */,
+				EF306A2124B41DCE00F3C7E7 /* ContentViewRokuButtons.swift in Sources */,
+				EF7D2CED252C1CAF00E56AB2 /* RokuApp.swift in Sources */,
+				EF306A0F24B41D4B00F3C7E7 /* Buttons.swift in Sources */,
+				EF28950024B426C2005E0CB8 /* AppDelegate.swift in Sources */,
+				EF306A1124B41D4B00F3C7E7 /* RemoteTypes.swift in Sources */,
 				EF3069D424B41D2600F3C7E7 /* SceneDelegate.swift in Sources */,
-				EF3069D624B41D2600F3C7E7 /* ContentView.swift in Sources */,
+				EF7D2CE8252C1C7900E56AB2 /* CompTop.swift in Sources */,
+				EF306A0D24B41D4B00F3C7E7 /* RemoteButton.swift in Sources */,
+				EF7D2CE5252C1C7900E56AB2 /* CompRokuDevices.swift in Sources */,
+				EF306A1024B41D4B00F3C7E7 /* Errors.swift in Sources */,
+				EF306A0524B41D3D00F3C7E7 /* Settings.swift in Sources */,
+				EF7D2CE3252C1C7900E56AB2 /* CompGroupedView.swift in Sources */,
+				EF306A1C24B41DCE00F3C7E7 /* ContentViewMain.swift in Sources */,
+				EF7D2CF8252C2D8900E56AB2 /* CompKeyboardPanel.swift in Sources */,
+				EF306A2224B41DCE00F3C7E7 /* ContentViewSettings.swift in Sources */,
+				EF7D2CE4252C1C7900E56AB2 /* CompArrows.swift in Sources */,
+				EF7D2CE6252C1C7900E56AB2 /* CompDevices.swift in Sources */,
+				EF306A0E24B41D4B00F3C7E7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +487,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -366,10 +512,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = R;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -402,6 +549,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -420,9 +568,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = R;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -433,11 +582,14 @@
 		EF3069F924B41D2800F3C7E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MyMobileRemote/Preview Content\"";
+				DEVELOPMENT_TEAM = C6XMS929M4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MyMobileRemote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,11 +604,14 @@
 		EF3069FA24B41D2800F3C7E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MyMobileRemote/Preview Content\"";
+				DEVELOPMENT_TEAM = C6XMS929M4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MyMobileRemote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
