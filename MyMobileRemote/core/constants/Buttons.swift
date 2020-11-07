@@ -10,8 +10,8 @@ import Foundation
 
 struct Buttons {
     struct Roku {
-        static let MUTE             = RemoteButton(forType: .roku, symbol: "⁌", endpoint: .keypress, command: "Mute")
         static let POWER            = RemoteButton(forType: .roku, symbol: "⏻", endpoint: .keypress, command: "Power")
+        static let MUTE             = RemoteButton(forType: .roku, symbol: "⁌", endpoint: .keypress, command: "VolumeMute")
         static let VOLUME_DOWN      = RemoteButton(forType: .roku, symbol: "−", endpoint: .keypress, command: "VolumeDown")
         static let VOLUME_UP        = RemoteButton(forType: .roku, symbol: "＋", endpoint: .keypress, command: "VolumeUp")
         static let DOWN             = RemoteButton(forType: .roku, symbol: "↓", endpoint: .keypress, command: "Down")
@@ -36,12 +36,5 @@ struct Buttons {
         static let CHAN_HULU        = RemoteButton(forType: .roku, symbol: "Hulu", endpoint: .launch, command: "2285")
         static let CHAN_YOUTUBE     = RemoteButton(forType: .roku, symbol: "YouTube", endpoint: .launch, command: "837")
         static let CHAN_SPOTIFY     = RemoteButton(forType: .roku, symbol: "Spotify", endpoint: .launch, command: "19977")
-    }
-
-    struct CEC {
-        static let MUTE             = RemoteButton(forType: .cec, symbol: "🔇", endpoint: .volume, command: "")
-        static let POWER            = RemoteButton(forType: .cec, symbol: "🔌", endpoint: .power, command: "")
-        static let VOLUME_UP        = RemoteButton(forType: .cec, symbol: "＋", endpoint: .volume, command: "up")
-        static let VOLUME_DOWN      = RemoteButton(forType: .cec, symbol: "−", endpoint: .volume, command: "down")
     }
 }

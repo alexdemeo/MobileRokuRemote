@@ -18,10 +18,8 @@ enum CodingKeys: CodingKey {
 
 class Settings : ObservableObject { // this needs to be a reference type
     @Published var ipRoku: String
-    @Published var ipPi: String
-    @Published var keyboardMode: KeyboardMode
-    @Published var volume: Int
     @Published var isRokuOnly: Bool
+    @Published var volButtons: Bool
     
     private static let path = URL(fileURLWithPath: "settings.json")
     private static let firstTimeKey = "firstTime"
@@ -30,17 +28,12 @@ class Settings : ObservableObject { // this needs to be a reference type
         "http://\(AppDelegate.instance.settings.ipRoku):8060"
     }
     
-    var cecBaseURL: String {
-        "http://\(AppDelegate.instance.settings.ipPi):5000"
-    }
 //    AppDelegate.instance().net(url: "http://\(AppDelegate.settings().ipRoku):8060\(self.commandStr)", method: "POST")
 
-    init(ipRoku: String, ipPi: String, keyboardMode: KeyboardMode, volume: Int, isRokuOnly: Bool) {
+    init(ipRoku: String, isRokuOnly: Bool, volButtons: Bool) {
         self.ipRoku = ipRoku
-        self.ipPi = ipPi
-        self.keyboardMode = keyboardMode
-        self.volume = volume
         self.isRokuOnly = isRokuOnly
+        self.volButtons = volButtons
         self.save()
     }
     
@@ -50,17 +43,12 @@ class Settings : ObservableObject { // this needs to be a reference type
         
         let defaults = UserDefaults.standard
         defaults.set(self.ipRoku, forKey: "ipRoku")
-        defaults.set(self.ipPi, forKey: "ipPi")
-        defaults.set(self.keyboardMode.rawValue, forKey: "keyboardMode")
-        defaults.set(self.volume, forKey: "volume")
         defaults.set(self.isRokuOnly, forKey: "isRokuOnly")
+        defaults.set(self.volButtons, forKey: "volButtons")
     }
     
     func printSettings() {
         print("\tipRoku=\(self.ipRoku)")
-        print("\tipPi=\(self.ipPi)")
-        print("\tkeyboardMode=\(self.keyboardMode)")
-        print("\tvolume=\(self.volume)")
         print("\tisRokuOnly=\(self.isRokuOnly)")
     }
     
@@ -74,10 +62,8 @@ class Settings : ObservableObject { // this needs to be a reference type
             return res
         } else {
             let res = Settings(ipRoku:          defaults.string(forKey: "ipRoku")!,
-                               ipPi:            defaults.string(forKey: "ipPi")!,
-                               keyboardMode:    KeyboardMode(rawValue: defaults.string(forKey: "keyboardMode")!)!,
-                               volume:          defaults.integer(forKey: "volume"),
-                               isRokuOnly:      defaults.bool(forKey: "isRokuOnly"))
+                               isRokuOnly:      defaults.bool(forKey: "isRokuOnly"),
+                               volButtons:      defaults.bool(forKey: "volButtons"))
             print("loaded=", res.ipRoku)
             res.printSettings()
             return res

@@ -37,21 +37,6 @@ struct RemoteButton : Identifiable {
         switch self.type {
         case .roku:
             self.roku()
-        case .cec:
-            switch self.endpoint {
-            case .power:
-                return
-            case .volume:
-                // temporarily (until PC adapter arrives), volume will be a volume button press, rather than CEC volume change
-                self.cec(method: "POST")
-            case .key:
-                return
-            case .transmit:
-                return
-            case .keypress, .launch:
-                print("Somehow got CEC remote with Roku endpoint")
-                return
-            }
         }
     }
     
@@ -67,9 +52,5 @@ struct RemoteButton : Identifiable {
 //            }
 //        }
         AppDelegate.instance.netAsync(url: "\(AppDelegate.instance.settings.rokuBaseURL)\(self.commandStr)", method: "POST")
-    }
-    
-    private func cec(method: String) {
-        AppDelegate.instance.netAsync(url: "\(AppDelegate.instance.settings.cecBaseURL)\(self.commandStr)", method: method)
     }
 }

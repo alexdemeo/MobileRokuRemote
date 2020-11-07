@@ -10,7 +10,6 @@ import Foundation
 
 enum RemoteType: String {
     case roku = "Roku"
-    case cec = "CEC"
 }
 
 enum CommandEndpoint: String {

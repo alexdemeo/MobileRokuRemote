@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import AVKit
 
 class DisplaySettingsPane: ObservableObject {
     @Published var shown: Bool = false
@@ -48,12 +49,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var latestResponse: Response = Response()
     var rokuChannelButtons: ObservedRokuButtons = ObservedRokuButtons()
     var text: ObservedText = ObservedText()
-
+//    var audioLevel = 0.0
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.rokuChannelButtons.sendRefreshRequest()
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+           try audioSession.setActive(true, options: [])
+            audioSession.addObserver(self, forKeyPath: "outputVolume", options: [NSKeyValueObservingOptions.new, NSKeyValueObservingOptions.old, NSKeyValueObservingOptions.prior, NSKeyValueObservingOptions.initial], context: nil)
+//            self.audioLevel = Double(audioSession.outputVolume)
+        } catch {
+           print("Error")
+        }
         return true
     }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//        guard let session = object as? AVAudioSession else {
+//            return
+//        }
+        if keyPath == "outputVolume"{
+            guard let dict = change else {
+                return
+            }
+            guard let new = dict[NSKeyValueChangeKey.newKey] as? Float, let old = dict[NSKeyValueChangeKey.oldKey] as? Float else {
+                return
+            }
+            print("\(old) => \(new)")
+            if (old < new) {
+                Buttons.Roku.VOLUME_UP.exec()
+            } else if (old > new) {
+                Buttons.Roku.VOLUME_DOWN.exec()
+            }
+        }
+     }
 
     // MARK: UISceneSession Lifecycle
 
@@ -103,13 +132,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             && response.statusCode == 200 {
             // if it's a volume endpoint
             if e.lowercased().contains("up") {
-                self.settings.volume += 1
-                print("volume + 1 = \(self.settings.volume)")
             } else if e.lowercased().contains("down") {
-                print("volume - 1 = \(self.settings.volume)")
-                self.settings.volume -= 1
             } else if e.lowercased().contains("Lit_") {
-                print("\tHERE")
                 let char = e.split(separator: "_")[1]
                 self.updateTextFieldFor(character: String(char))
             }
