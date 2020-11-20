@@ -56,8 +56,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let audioSession = AVAudioSession.sharedInstance()
         do {
            try audioSession.setActive(true, options: [])
-            audioSession.addObserver(self, forKeyPath: "outputVolume", options: [NSKeyValueObservingOptions.new, NSKeyValueObservingOptions.old, NSKeyValueObservingOptions.prior, NSKeyValueObservingOptions.initial], context: nil)
-//            self.audioLevel = Double(audioSession.outputVolume)
+            audioSession.addObserver(self, forKeyPath: "outputVolume", options: [
+                                        NSKeyValueObservingOptions.new,
+                                        NSKeyValueObservingOptions.old,
+//                                        NSKeyValueObservingOptions.prior,
+//                                        NSKeyValueObservingOptions.initial,
+            ], context: nil)
         } catch {
            print("Error")
         }
@@ -65,17 +69,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-//        guard let session = object as? AVAudioSession else {
-//            return
-//        }
         if keyPath == "outputVolume"{
+            if !self.settings.volButtons {
+                return
+            }
             guard let dict = change else {
                 return
             }
             guard let new = dict[NSKeyValueChangeKey.newKey] as? Float, let old = dict[NSKeyValueChangeKey.oldKey] as? Float else {
                 return
             }
-            print("\(old) => \(new)")
             if (old < new) {
                 Buttons.Roku.VOLUME_UP.exec()
             } else if (old > new) {
@@ -172,7 +175,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     static func sanitizeURL(url: String) -> String? {
-        guard let regex = try? NSRegularExpression(pattern: "^http.*[0-9]", options: .caseInsensitive) else {
+        print(url)
+        guard let regex = try? NSRegularExpression(pattern: "^http:\\/\\/([0-9]|\\.|:)*", options: .caseInsensitive) else {
             return nil
         }
         return regex.stringByReplacingMatches(in: url, options: [], range: NSRange(location: 0, length:  url.count), withTemplate: "")

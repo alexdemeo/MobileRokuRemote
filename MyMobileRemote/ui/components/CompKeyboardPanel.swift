@@ -10,25 +10,16 @@ import SwiftUI
 
 struct ListeningTextField: UIViewRepresentable {
     let keyboardType: UIKeyboardType
-    @Binding var text: String
     
     func makeUIView(context: Context) -> UITextField {
         let textField = UITextField(frame: .zero)
         textField.borderStyle = .roundedRect
         textField.keyboardType = self.keyboardType
         textField.delegate = context.coordinator
-        textField.placeholder = "Type:"
+//        textField.placeholder = "Type:"
         textField.textAlignment = .center
+        textField.text = " "
         _ = NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: textField)
-            .compactMap {
-                guard let field = $0.object as? UITextField else {
-                    return ""
-                }
-                return field.text
-            }
-            .sink {
-                self.text = $0
-            }
         
         return textField
     }
@@ -47,18 +38,14 @@ struct ListeningTextField: UIViewRepresentable {
         }
         
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//            let hash = String(describing: string.first?.hexDigitValue)
-//            print("range=\(range) string=0x\(hash)")
-            self.onKey(textField, key: string)
             if string.isEmpty {
                 self.onKey(textField, key: "backspace")
             } else if string == "\n" {
-                textField.text = nil
                 textField.resignFirstResponder()
             } else {
-//                textField.text = nil
+                self.onKey(textField, key: string)
             }
-            return true
+            return false
         }
         
         func onKey(_ textField: UITextField, key: String) {
@@ -76,14 +63,13 @@ struct ListeningTextField: UIViewRepresentable {
                 RemoteButton(forType: .roku, symbol: key, endpoint: .keypress, command: "Backspace").exec()
             }
         }
-
     }
 }
 struct ComponentKeyboardPanel: View {
-    @State var text = ""
+//    @State var text = " "
     
     var body: some View {
-        AnyView(ListeningTextField(keyboardType: .default, text: $text))
+        AnyView(ListeningTextField(keyboardType: .default))
     }
 }
 

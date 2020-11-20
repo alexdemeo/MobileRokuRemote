@@ -16,13 +16,13 @@ struct ComponentArrows: View {
     var buttonOK: RemoteButton
     
     var body: some View {
-        VStack(alignment: .center, spacing: Constants.SPACING_VERTICAL) {
+        VStack(alignment: .center, spacing: Constants.SPACING_VERTICAL * 1.5) {
             HStack(alignment: .top) {
                 Spacer().frame(width: Constants.CELL_WIDTH)
                 Button(action: buttonUp.exec ) { Text(buttonUp.symbol) }.scaleEffect(2.0)
                 Spacer().frame(width: Constants.CELL_WIDTH)
             }
-            HStack(spacing: Constants.REMOTE_CENTER_GAP_WIDTH) {
+            HStack(spacing: Constants.SPACING_VERTICAL * 1.75) {
                 Button(action: buttonLeft.exec) { Text(buttonLeft.symbol) }.scaleEffect(2.0)
                 Button(action: buttonOK.exec) { Text(buttonOK.symbol) }.scaleEffect(2.0)
                 Button(action: buttonRight.exec) { Text(buttonRight.symbol) }.scaleEffect(2.0)
