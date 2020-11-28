@@ -46,7 +46,7 @@ struct ContentViewRokuButtons: View {
     }
 }
 
-struct ContentViewRoku_Previews: PreviewProvider {
+struct ContentViewRokuButtons_Previews: PreviewProvider {
     static var previews: some View {
         ContentViewRokuButtons()
             .environmentObject(AppDelegate.instance.rokuChannelButtons)

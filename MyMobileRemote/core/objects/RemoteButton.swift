@@ -51,6 +51,6 @@ struct RemoteButton : Identifiable {
 //                return
 //            }
 //        }
-        AppDelegate.instance.netAsync(url: "\(AppDelegate.instance.settings.rokuBaseURL)\(self.commandStr)", method: "POST")
+        AppDelegate.instance.netAsync(url: "\(AppDelegate.instance.settings.rokuBaseURL)\(self.commandStr)", method: "POST", header: nil, body: nil, callback: nil)
     }
 }

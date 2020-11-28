@@ -24,10 +24,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let contentView = ContentViewMain()
                 .environmentObject(AppDelegate.instance.settings)
                 .environmentObject(AppDelegate.instance.displaySettingsPane)
-                .environmentObject(AppDelegate.instance.latestRequest)
-                .environmentObject(AppDelegate.instance.latestResponse)
+                .environmentObject(AppDelegate.instance.networkManager.latestRequest)
+                .environmentObject(AppDelegate.instance.networkManager.latestResponse)
                 .environmentObject(AppDelegate.instance.rokuChannelButtons)
                 .environmentObject(AppDelegate.instance.text)
+
             window.rootViewController = UIHostingController(rootView: contentView)
             window.makeKeyAndVisible()
             self.window = window

@@ -24,11 +24,9 @@ struct ContentViewMain: View {
         }
         let msg = success ? nil : latestResponse.error?.localizedDescription
         return ScrollView {
-            ComponentKeyboardPanel().frame(width: Constants.CELL_WIDTH * 1.5)
-            ContentViewRokuButtons()
-            ComponentStatus(command: command, msg: msg, success: success, statusCode: latestResponse.response?.statusCode ?? -1)
-                .padding(.bottom)
-            ComponentRokuDevices().padding(.bottom)
+            ComponentStatus(command: command, msg: msg, success: success, statusCode: latestResponse.response?.statusCode ?? -1).padding(.bottom)
+            
+            ContentViewRoku()
             if self.displaySettingsPane.shown {
                 VStack {
                     ContentViewSettings().padding([.top, .horizontal])
