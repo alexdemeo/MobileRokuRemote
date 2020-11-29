@@ -22,7 +22,6 @@
 		EF306A0D24B41D4B00F3C7E7 /* RemoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A0724B41D4B00F3C7E7 /* RemoteButton.swift */; };
 		EF306A0E24B41D4B00F3C7E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A0924B41D4B00F3C7E7 /* Constants.swift */; };
 		EF306A0F24B41D4B00F3C7E7 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A0A24B41D4B00F3C7E7 /* Buttons.swift */; };
-		EF306A1024B41D4B00F3C7E7 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A0B24B41D4B00F3C7E7 /* Errors.swift */; };
 		EF306A1124B41D4B00F3C7E7 /* RemoteTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A0C24B41D4B00F3C7E7 /* RemoteTypes.swift */; };
 		EF306A1C24B41DCE00F3C7E7 /* ContentViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A1324B41DCE00F3C7E7 /* ContentViewMain.swift */; };
 		EF306A2124B41DCE00F3C7E7 /* ContentViewRokuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF306A1924B41DCE00F3C7E7 /* ContentViewRokuButtons.swift */; };
@@ -34,6 +33,7 @@
 		EF7D2CE8252C1C7900E56AB2 /* CompTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CE2252C1C7900E56AB2 /* CompTop.swift */; };
 		EF7D2CED252C1CAF00E56AB2 /* RokuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CEC252C1CAF00E56AB2 /* RokuApp.swift */; };
 		EF7D2CF8252C2D8900E56AB2 /* CompKeyboardPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CF7252C2D8900E56AB2 /* CompKeyboardPanel.swift */; };
+		EFE67CB7257238340016EF74 /* CompRemotePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE67CB6257238340016EF74 /* CompRemotePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +98,6 @@
 		EF306A0724B41D4B00F3C7E7 /* RemoteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteButton.swift; sourceTree = "<group>"; };
 		EF306A0924B41D4B00F3C7E7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EF306A0A24B41D4B00F3C7E7 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		EF306A0B24B41D4B00F3C7E7 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		EF306A0C24B41D4B00F3C7E7 /* RemoteTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteTypes.swift; sourceTree = "<group>"; };
 		EF306A1324B41DCE00F3C7E7 /* ContentViewMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewMain.swift; sourceTree = "<group>"; };
 		EF306A1924B41DCE00F3C7E7 /* ContentViewRokuButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewRokuButtons.swift; sourceTree = "<group>"; };
@@ -112,6 +111,7 @@
 		EF7D2CF7252C2D8900E56AB2 /* CompKeyboardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompKeyboardPanel.swift; sourceTree = "<group>"; };
 		EFB84AA6254608AE005B2C3A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		EFB84AA8254608AE005B2C3A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		EFE67CB6257238340016EF74 /* CompRemotePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompRemotePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +190,6 @@
 			children = (
 				EF306A0724B41D4B00F3C7E7 /* RemoteButton.swift */,
 				EF1C6E182572271C00A85236 /* NetworkManager.swift */,
-				EF306A0B24B41D4B00F3C7E7 /* Errors.swift */,
 				EF306A0C24B41D4B00F3C7E7 /* RemoteTypes.swift */,
 			);
 			path = objects;
@@ -303,6 +302,7 @@
 			children = (
 				EF7D2CE1252C1C7900E56AB2 /* CompStatus.swift */,
 				EF7D2CF7252C2D8900E56AB2 /* CompKeyboardPanel.swift */,
+				EFE67CB6257238340016EF74 /* CompRemotePicker.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -460,9 +460,9 @@
 				EF306A1124B41D4B00F3C7E7 /* RemoteTypes.swift in Sources */,
 				EF3069D424B41D2600F3C7E7 /* SceneDelegate.swift in Sources */,
 				EF7D2CE8252C1C7900E56AB2 /* CompTop.swift in Sources */,
+				EFE67CB7257238340016EF74 /* CompRemotePicker.swift in Sources */,
 				EF306A0D24B41D4B00F3C7E7 /* RemoteButton.swift in Sources */,
 				EF7D2CE5252C1C7900E56AB2 /* CompRokuDevices.swift in Sources */,
-				EF306A1024B41D4B00F3C7E7 /* Errors.swift in Sources */,
 				EF306A0524B41D3D00F3C7E7 /* Settings.swift in Sources */,
 				EF7D2CE3252C1C7900E56AB2 /* CompGroupedView.swift in Sources */,
 				EF306A1C24B41DCE00F3C7E7 /* ContentViewMain.swift in Sources */,

@@ -36,10 +36,19 @@ struct ContentViewHome: View {
                         data, response, error in
                     })
                 } else {
-                    self.coffeeMachine.sendRefreshRequest()
+//                    self.coffeeMachine.sendRefreshRequest()
                 }
             }
             .toggleStyle(SwitchToggleStyle())
-        }.padding(.all)
+        }.padding(.all).frame(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.height, alignment: .center)
+    }
+}
+
+
+struct ContentViewHome_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentViewHome()
+            .environmentObject(AppDelegate.instance.coffeeMachine)
+            .buttonStyle(BorderlessButtonStyle())
     }
 }

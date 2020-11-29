@@ -10,16 +10,11 @@ import Foundation
 
 enum RemoteType: String {
     case roku = "Roku"
+    case home = "Home"
 }
 
 enum CommandEndpoint: String {
     /**************** Roku endpoints ******************/
     case keypress = "keypress"
     case launch = "launch"
-    
-    /**************** web-cec endpoints ******************/
-    case power = "power"
-    case volume = "volume"
-    case key = "key"
-    case transmit = "transmit"
 }

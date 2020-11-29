@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 .environmentObject(AppDelegate.instance.networkManager.latestResponse)
                 .environmentObject(AppDelegate.instance.rokuChannelButtons)
                 .environmentObject(AppDelegate.instance.text)
-
+                .environmentObject(AppDelegate.instance.coffeeMachine)
             window.rootViewController = UIHostingController(rootView: contentView)
             window.makeKeyAndVisible()
             self.window = window

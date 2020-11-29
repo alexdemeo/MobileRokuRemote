@@ -10,9 +10,11 @@ import SwiftUI
 
 struct ContentViewRoku: View {
     var body: some View {
-        ComponentKeyboardPanel().frame(width: Constants.CELL_WIDTH * 1.5)
-        ContentViewRokuButtons().padding(.bottom)
-        ComponentRokuDevices().padding(.bottom)
+        VStack {
+            ComponentKeyboardPanel().frame(width: Constants.CELL_WIDTH * 1.5)
+            ContentViewRokuButtons().padding(.bottom)
+            ComponentRokuDevices().padding(.bottom)
+        }
     }
 }
 

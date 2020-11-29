@@ -16,42 +16,70 @@ struct ContentViewMain: View {
     @EnvironmentObject var rokuChannelButtons: ObservedRokuButtons
     @EnvironmentObject var text: ObservedText
     
+    @State var currentRemote: RemoteType? = nil
+    
+    var settingsView: some View {
+        VStack {
+            ContentViewSettings().padding(.vertical)
+            Button(action: {
+                self.settings.save()
+                self.displaySettingsPane.shown.toggle()
+                self.rokuChannelButtons.sendRefreshRequest()
+            }) {
+                Text("Save")
+            }.buttonStyle(DefaultButtonStyle())
+        }
+    }
+    
     var body: some View {
         let command: String = AppDelegate.sanitizeURL(url: latestRequest.request?.url?.absoluteString ?? "") ?? "error"
         var success = latestResponse.error == nil
         if let resp = latestResponse.response {
-            success = success && resp.statusCode == 200
+            let statusCode = resp.statusCode
+            success = success && (200 <= statusCode) && (statusCode < 300)
         }
         let msg = success ? nil : latestResponse.error?.localizedDescription
-        return ScrollView {
-            ComponentStatus(command: command, msg: msg, success: success, statusCode: latestResponse.response?.statusCode ?? -1).padding(.bottom)
+        let statusCode = latestResponse.response?.statusCode ?? -1
+        return VStack {
             
-            ContentViewRoku()
             if self.displaySettingsPane.shown {
-                VStack {
-                    ContentViewSettings().padding([.top, .horizontal])
-                    Button(action: {
-                        self.settings.save()
-                        self.displaySettingsPane.shown.toggle()
-                        self.rokuChannelButtons.sendRefreshRequest()
-                    }) {
-                        Text("Save")
-                    }
-                }.padding(.bottom, 100)
+                self.settingsView
             } else {
-                HStack {
-                    Button(action: {
+                ComponentStatus(command: command, msg: msg, success: success, statusCode: statusCode).padding(.bottom)
+                    .onTapGesture {
+                        self.currentRemote = RemoteType.init(rawValue: self.settings.remotes.first?.title ?? "Roku")
                         self.displaySettingsPane.shown.toggle()
-                    }) {
-                        Text("⚙")
+                    }
+            }
+            TabView(selection: $currentRemote) {
+                ForEach(self.settings.remotes, id: \.title) { remote in
+                    if remote.enabled {
+                        if remote.title == "Roku" {
+                            ScrollView {
+                                ContentViewRoku()
+                                    .tabItem {
+                                        Text("Roku")
+                                    }.onTapGesture {
+                                        self.currentRemote = .roku
+                                    }.tag(RemoteType.roku)
+                            }
+                        } else if remote.title == "Home" {
+                            ScrollView {
+                                ContentViewHome()
+                                    .tabItem {
+                                        Text("Home")
+                                    }.onTapGesture {
+                                        self.currentRemote = .home
+                                    }.tag(RemoteType.home)
+                            }
+                        }
                     }
                 }
-            }
+            }.tabViewStyle(PageTabViewStyle())
         }
         .padding(.top)
     }
 }
-
 
 struct ContentViewMain_Previews: PreviewProvider {
     static var previews: some View {

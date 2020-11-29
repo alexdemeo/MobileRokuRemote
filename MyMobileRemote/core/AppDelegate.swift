@@ -66,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var rokuChannelButtons: ObservedRokuButtons = ObservedRokuButtons()
     var text: ObservedText = ObservedText()
     var networkManager: NetworkManager = NetworkManager.shared
+    var coffeeMachine: ObservedCoffeeMachine = ObservedCoffeeMachine()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.rokuChannelButtons.sendRefreshRequest()
@@ -75,13 +76,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             audioSession.addObserver(self, forKeyPath: "outputVolume", options: [
                                         NSKeyValueObservingOptions.new,
                                         NSKeyValueObservingOptions.old,
-//                                        NSKeyValueObservingOptions.prior,
-//                                        NSKeyValueObservingOptions.initial,
             ], context: nil)
         } catch {
            print("Error")
         }
         return true
+    }
+    
+    
+    func clearDefaults() {
+        if let bundleID = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundleID)
+        }
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {

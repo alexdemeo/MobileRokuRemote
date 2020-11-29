@@ -68,8 +68,11 @@ struct Constants {
     static let VOL_MAX = 100
     
     static let DEFAULT_SETTINGS: Settings           = Settings(ipRoku: "",
-                                                               isRokuOnly: true,
-                                                               volButtons: true)
+                                                               volButtons: true,
+                                                               remotes: [
+                                                                RemoteData(title: "Roku", enabled: true),
+                                                                RemoteData(title: "Home", enabled: true)
+                                                               ])
     
     static let ROKU_APP_QUERY_TIMEOUT_SECONDS: Int  = 5
         

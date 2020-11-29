@@ -66,8 +66,6 @@ struct ListeningTextField: UIViewRepresentable {
     }
 }
 struct ComponentKeyboardPanel: View {
-//    @State var text = " "
-    
     var body: some View {
         AnyView(ListeningTextField(keyboardType: .default))
     }

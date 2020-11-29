@@ -12,15 +12,16 @@ enum KeyboardMode: String, Codable, CaseIterable {
     case off, roku, cec
 }
 
-enum CodingKeys: CodingKey {
-    case ipRoku, ipPi, keyboardMode
+struct RemoteData: Codable, Equatable {
+    var title: String
+    var enabled: Bool
 }
 
 class Settings : ObservableObject { // this needs to be a reference type
     @Published var ipRoku: String
-    @Published var isRokuOnly: Bool
     @Published var volButtons: Bool
-    
+    @Published var remotes: [RemoteData]
+
     private static let path = URL(fileURLWithPath: "settings.json")
     private static let firstTimeKey = "firstTime"
 
@@ -28,12 +29,10 @@ class Settings : ObservableObject { // this needs to be a reference type
         "http://\(AppDelegate.instance.settings.ipRoku):8060"
     }
     
-//    AppDelegate.instance().net(url: "http://\(AppDelegate.settings().ipRoku):8060\(self.commandStr)", method: "POST")
-
-    init(ipRoku: String, isRokuOnly: Bool, volButtons: Bool) {
+    init(ipRoku: String, volButtons: Bool, remotes: [RemoteData]) {
         self.ipRoku = ipRoku
-        self.isRokuOnly = isRokuOnly
         self.volButtons = volButtons
+        self.remotes = remotes
         self.save()
     }
     
@@ -43,13 +42,15 @@ class Settings : ObservableObject { // this needs to be a reference type
         
         let defaults = UserDefaults.standard
         defaults.set(self.ipRoku, forKey: "ipRoku")
-        defaults.set(self.isRokuOnly, forKey: "isRokuOnly")
         defaults.set(self.volButtons, forKey: "volButtons")
+        let remoteData: [String] = self.remotes.map { String(data: try! JSONEncoder().encode($0), encoding: .utf8)! }
+        defaults.set(remoteData, forKey: "remotes")
     }
     
     func printSettings() {
         print("\tipRoku=\(self.ipRoku)")
-        print("\tisRokuOnly=\(self.isRokuOnly)")
+        print("\\tvolButtons=\(self.volButtons)")
+        print("\tremotes=\(self.remotes)")
     }
     
     static func load() -> Settings? {
@@ -62,8 +63,10 @@ class Settings : ObservableObject { // this needs to be a reference type
             return res
         } else {
             let res = Settings(ipRoku:          defaults.string(forKey: "ipRoku")!,
-                               isRokuOnly:      defaults.bool(forKey: "isRokuOnly"),
-                               volButtons:      defaults.bool(forKey: "volButtons"))
+                               volButtons:      defaults.bool(forKey: "volButtons"),
+                               remotes: defaults.stringArray(forKey: "remotes")?.map {
+                                    try? JSONDecoder().decode(RemoteData.self, from: $0.data(using: .utf8)!)
+                               } as? [RemoteData] ?? Constants.DEFAULT_SETTINGS.remotes)
             print("loaded=", res.ipRoku)
             res.printSettings()
             return res

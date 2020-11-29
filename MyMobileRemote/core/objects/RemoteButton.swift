@@ -33,24 +33,19 @@ struct RemoteButton : Identifiable {
         "/\(self.endpoint)/\([self.command].joined(separator: "/"))"
     }
     
-    func exec() {
+    func exec() { // This is a dumb paradigm, I'm too lazy to fix it rn.
         switch self.type {
         case .roku:
             self.roku()
+        case .home:
+            self.home()
         }
     }
     
+    private func home() {
+    }
+    
     private func roku() {
-//        if (self.endpoint == .keypress) {
-//            if self.command == "VolumeUp" && AppDelegate.settings.volume >= Constants.VOL_MAX {
-//                AppDelegate.settings.volume = Constants.VOL_MAX
-//                return
-//            }
-//            if self.command == "VolumeDown" && AppDelegate.settings.volume <= 0 {
-//                AppDelegate.settings.volume = 0
-//                return
-//            }
-//        }
         AppDelegate.instance.netAsync(url: "\(AppDelegate.instance.settings.rokuBaseURL)\(self.commandStr)", method: "POST", header: nil, body: nil, callback: nil)
     }
 }
