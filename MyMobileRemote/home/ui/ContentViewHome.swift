@@ -40,7 +40,8 @@ struct ContentViewHome: View {
                 }
             }
             .toggleStyle(SwitchToggleStyle())
-        }.padding(.all).frame(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.height, alignment: .center)
+        }.padding(.all)
+//        .frame(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.height, alignment: .center)
     }
 }
 

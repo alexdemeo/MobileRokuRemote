@@ -41,7 +41,7 @@ struct ContentViewMain: View {
         let msg = success ? nil : latestResponse.error?.localizedDescription
         let statusCode = latestResponse.response?.statusCode ?? -1
         return VStack {
-            
+            Spacer(minLength: Constants.CELL_HEIGHT / 2)
             if self.displaySettingsPane.shown {
                 self.settingsView
             } else {
@@ -77,7 +77,7 @@ struct ContentViewMain: View {
                 }
             }.tabViewStyle(PageTabViewStyle())
         }
-        .padding(.top)
+        .padding(.top).frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     }
 }
 
@@ -89,6 +89,7 @@ struct ContentViewMain_Previews: PreviewProvider {
             .environmentObject(AppDelegate.instance.latestResponse)
             .environmentObject(AppDelegate.instance.rokuChannelButtons)
             .environmentObject(AppDelegate.instance.text)
+            .environmentObject(AppDelegate.instance.settings)
             .buttonStyle(BorderlessButtonStyle())
     }
 }
