@@ -40,10 +40,10 @@ struct ComponentTop: View {
 
 struct ComponentTop_Previews: PreviewProvider {
     static var previews: some View {
-        ComponentTop(buttonVolumeUp: Buttons.Roku.VOLUME_UP,
-                     buttonVolumeDown: Buttons.Roku.VOLUME_DOWN,
-                     buttonPower: Buttons.Roku.POWER,
-                     buttonMute: Buttons.Roku.MUTE)
+        ComponentTop(buttonVolumeUp: Buttons.VOLUME_UP,
+                     buttonVolumeDown: Buttons.VOLUME_DOWN,
+                     buttonPower: Buttons.POWER,
+                     buttonMute: Buttons.MUTE)
             .buttonStyle(BorderlessButtonStyle())
             .frame(width: 300, height: 300)
     }

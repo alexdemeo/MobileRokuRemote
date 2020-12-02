@@ -32,20 +32,21 @@ struct ContentViewMain: View {
     }
     
     var body: some View {
-        let command: String = AppDelegate.sanitizeURL(url: latestRequest.request?.url?.absoluteString ?? "") ?? "error"
+//        let command: String = AppDelegate.sanitizeURL(url: latestRequest.request?.url?.absoluteString ?? "") ?? "error"
+        let command: String = latestRequest.request?.url?.absoluteString ?? "error"
         var success = latestResponse.error == nil
         if let resp = latestResponse.response {
             let statusCode = resp.statusCode
             success = success && (200 <= statusCode) && (statusCode < 300)
         }
-        let msg = success ? nil : latestResponse.error?.localizedDescription
-        let statusCode = latestResponse.response?.statusCode ?? -1
+        let msg = success ? nil :
+            latestResponse.data == nil ? latestResponse.error?.localizedDescription : String(data: latestResponse.data!, encoding: .utf8)
         return VStack {
             Spacer(minLength: Constants.CELL_HEIGHT / 2)
             if self.displaySettingsPane.shown {
                 self.settingsView
             } else {
-                ComponentStatus(command: command, msg: msg, success: success, statusCode: statusCode).padding(.bottom)
+                ComponentStatus(command: command, msg: msg, success: success, statusCode: latestResponse.response?.statusCode ?? -1).padding(.bottom)
                     .onTapGesture {
                         self.currentRemote = RemoteType.init(rawValue: self.settings.remotes.first?.title ?? "Roku")
                         self.displaySettingsPane.shown.toggle()

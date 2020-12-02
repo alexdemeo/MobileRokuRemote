@@ -44,25 +44,25 @@ struct Constants {
     static let PADDING_EDGE_BUTTON: CGFloat         = 75
     
     static let DEFAULT_KEYBINDS_ROKU                = [
-                                                            "leftArrow"     : Buttons.Roku.LEFT,
-                                                            "rightArrow"    : Buttons.Roku.RIGHT,
-                                                            "upArrow"       : Buttons.Roku.UP,
-                                                            "downArrow"     : Buttons.Roku.DOWN,
+                                                            "leftArrow"     : Buttons.LEFT,
+                                                            "rightArrow"    : Buttons.RIGHT,
+                                                            "upArrow"       : Buttons.UP,
+                                                            "downArrow"     : Buttons.DOWN,
                                                             
-                                                            "returnKey"     : Buttons.Roku.OK,
-                                                            "/"             : Buttons.Roku.POWER,
-                                                    //        "backspace"     : Buttons.Roku.?
-                                                            "`"             : Buttons.Roku.BACK,
+                                                            "returnKey"     : Buttons.OK,
+                                                            "/"             : Buttons.POWER,
+                                                    //        "backspace"     : Buttons.?
+                                                            "`"             : Buttons.BACK,
                                                             
-                                                            "tab"           : Buttons.Roku.PLAY_PLAUSE,
-                                                            ","             : Buttons.Roku.REWIND,
-                                                            "."             : Buttons.Roku.FORWARD,
-                                                            "\\"            : Buttons.Roku.ASTERISK,
+                                                            "tab"           : Buttons.PLAY_PLAUSE,
+                                                            ","             : Buttons.REWIND,
+                                                            "."             : Buttons.FORWARD,
+                                                            "\\"            : Buttons.ASTERISK,
                                                             
-                                                            "="             : Buttons.Roku.VOLUME_UP,
-                                                            "-"             : Buttons.Roku.VOLUME_DOWN
-                                                    //        "0"             : Buttons.Roku.MUTE,
-                                                    //        "escape"        : Buttons.Roku.?
+                                                            "="             : Buttons.VOLUME_UP,
+                                                            "-"             : Buttons.VOLUME_DOWN
+                                                    //        "0"             : Buttons.MUTE,
+                                                    //        "escape"        : Buttons.?
                                                     ]
     
     static let VOL_MAX = 100

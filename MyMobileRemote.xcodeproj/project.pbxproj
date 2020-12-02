@@ -33,6 +33,7 @@
 		EF7D2CE8252C1C7900E56AB2 /* CompTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CE2252C1C7900E56AB2 /* CompTop.swift */; };
 		EF7D2CED252C1CAF00E56AB2 /* RokuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CEC252C1CAF00E56AB2 /* RokuApp.swift */; };
 		EF7D2CF8252C2D8900E56AB2 /* CompKeyboardPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CF7252C2D8900E56AB2 /* CompKeyboardPanel.swift */; };
+		EFDB39A025775D5B005DB39A /* CompCoffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB399F25775D5B005DB39A /* CompCoffee.swift */; };
 		EFE67CB7257238340016EF74 /* CompRemotePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE67CB6257238340016EF74 /* CompRemotePicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +112,7 @@
 		EF7D2CF7252C2D8900E56AB2 /* CompKeyboardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompKeyboardPanel.swift; sourceTree = "<group>"; };
 		EFB84AA6254608AE005B2C3A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		EFB84AA8254608AE005B2C3A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		EFDB399F25775D5B005DB39A /* CompCoffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompCoffee.swift; sourceTree = "<group>"; };
 		EFE67CB6257238340016EF74 /* CompRemotePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompRemotePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 		EF1C6DFA2571E57D00A85236 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				EF306A0A24B41D4B00F3C7E7 /* Buttons.swift */,
 				EF1C6E052572242C00A85236 /* components */,
 				EF306A1924B41DCE00F3C7E7 /* ContentViewRokuButtons.swift */,
 				EF1C6DFF2572242800A85236 /* ContentViewRoku.swift */,
@@ -180,6 +183,7 @@
 		EF1C6E0B257225E800A85236 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				EFDB39A525775DE6005DB39A /* components */,
 				EF1C6E0C257225E800A85236 /* ContentViewHome.swift */,
 			);
 			path = ui;
@@ -282,7 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				EF306A0924B41D4B00F3C7E7 /* Constants.swift */,
-				EF306A0A24B41D4B00F3C7E7 /* Buttons.swift */,
 			);
 			path = constants;
 			sourceTree = "<group>";
@@ -314,6 +317,14 @@
 				EFB84AA8254608AE005B2C3A /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFDB39A525775DE6005DB39A /* components */ = {
+			isa = PBXGroup;
+			children = (
+				EFDB399F25775D5B005DB39A /* CompCoffee.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +463,7 @@
 			files = (
 				EF7D2CE7252C1C7900E56AB2 /* CompStatus.swift in Sources */,
 				EF306A2124B41DCE00F3C7E7 /* ContentViewRokuButtons.swift in Sources */,
+				EFDB39A025775D5B005DB39A /* CompCoffee.swift in Sources */,
 				EF7D2CED252C1CAF00E56AB2 /* RokuApp.swift in Sources */,
 				EF1C6E192572271C00A85236 /* NetworkManager.swift in Sources */,
 				EF306A0F24B41D4B00F3C7E7 /* Buttons.swift in Sources */,

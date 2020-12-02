@@ -40,22 +40,6 @@ class ObservedText: ObservableObject {
     @Published var text: String? = nil
 }
 
-class ObservedCoffeeMachine: ObservableObject {
-    @Published var coffeeState: CoffeeState? = nil
-
-    func sendRefreshRequest() {
-        AppDelegate.instance.netAsync(url: "\(pi3URL)/status", method: "GET", header: nil, body: nil, callback: {
-            data, response, error in
-            guard let data = data else {
-                return
-            }
-            let code = String(data: data, encoding: .utf8)
-            self.coffeeState = code == "on" ? .on : .off
-            print("machine is \(String(describing: code))")
-        })
-    }
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -66,7 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var rokuChannelButtons: ObservedRokuButtons = ObservedRokuButtons()
     var text: ObservedText = ObservedText()
     var networkManager: NetworkManager = NetworkManager.shared
-    var coffeeMachine: ObservedCoffeeMachine = ObservedCoffeeMachine()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.rokuChannelButtons.sendRefreshRequest()
@@ -102,9 +85,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return
             }
             if (old < new) {
-                Buttons.Roku.VOLUME_UP.exec()
+                Buttons.VOLUME_UP.exec()
             } else if (old > new) {
-                Buttons.Roku.VOLUME_DOWN.exec()
+                Buttons.VOLUME_DOWN.exec()
             }
         }
      }

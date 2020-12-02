@@ -39,11 +39,11 @@ struct ComponentArrows: View {
 struct ComponentArrows_Previews: PreviewProvider {
     static var previews: some View {
         ComponentArrows(
-            buttonUp: Buttons.Roku.UP,
-            buttonDown: Buttons.Roku.DOWN,
-            buttonLeft: Buttons.Roku.LEFT,
-            buttonRight: Buttons.Roku.RIGHT,
-            buttonOK: Buttons.Roku.OK
+            buttonUp: Buttons.UP,
+            buttonDown: Buttons.DOWN,
+            buttonLeft: Buttons.LEFT,
+            buttonRight: Buttons.RIGHT,
+            buttonOK: Buttons.OK
         ).buttonStyle(BorderlessButtonStyle())
     }
 }
