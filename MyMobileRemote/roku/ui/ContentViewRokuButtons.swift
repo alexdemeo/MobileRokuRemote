@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct ContentViewRokuButtons: View {
-    @EnvironmentObject var rokuChannelButtons: ObservedRokuButtons
-    
     var body: some View {
         VStack(alignment: .center, spacing: Constants.SPACING_VERTICAL) {
             ComponentTop(buttonVolumeUp: Buttons.VOLUME_UP,
@@ -49,7 +47,6 @@ struct ContentViewRokuButtons: View {
 struct ContentViewRokuButtons_Previews: PreviewProvider {
     static var previews: some View {
         ContentViewRokuButtons()
-            .environmentObject(AppDelegate.instance.rokuChannelButtons)
             .buttonStyle(BorderlessButtonStyle())
     }
 }

@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct ContentViewRoku: View {
+    @EnvironmentObject var networkManager: NetworkManager
+    @EnvironmentObject var settings: Settings
+    
     var body: some View {
         VStack {
             ComponentKeyboardPanel().frame(width: Constants.CELL_WIDTH * 1.5)

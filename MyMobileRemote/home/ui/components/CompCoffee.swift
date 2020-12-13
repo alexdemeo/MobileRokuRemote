@@ -26,7 +26,7 @@ struct ComponentCoffee: View {
     
     
     func sendRefreshRequest() {
-        AppDelegate.instance.netAsync(url: "\(pi3URL)/coffee/status", method: "GET", header: nil, body: nil, callback: {
+        AppDelegate.instance.networkManager.async(url: "\(pi3URL)/coffee/status", method: "GET", header: nil, body: nil, callback: {
             data, response, error in
             guard let data = data else {
                 return
@@ -46,7 +46,7 @@ struct ComponentCoffee: View {
     
     
     func command(cmd: String, callback: ((Data?,  HTTPURLResponse?, Error?) -> Void)?) {
-        AppDelegate.instance.netAsync(url: "\(pi3URL)/coffee/\(cmd)", method: "PUT", header: nil, body: nil, callback: callback)
+        AppDelegate.instance.networkManager.async(url: "\(pi3URL)/coffee/\(cmd)", method: "PUT", header: nil, body: nil, callback: callback)
     }
     
     
@@ -77,11 +77,11 @@ struct ComponentCoffee: View {
                 DatePicker("Schedule", selection: $schedTime, displayedComponents: .hourAndMinute).labelsHidden()
                 Spacer()
                 Button("✓") {
-                    self.command(cmd: "/schedule/\(time.hour!):\(time.minute!)", callback: nil)
+                    self.command(cmd: "schedule/\(time.hour!):\(time.minute!)", callback: nil)
                 }
                 Spacer(minLength: Constants.CELL_WIDTH / 5)
                 Button("ⓧ") {
-                    self.command(cmd: "/schedule/cancel", callback: nil)
+                    self.command(cmd: "schedule/cancel", callback: nil)
                 }
             }
             VStack { // TODO: printer

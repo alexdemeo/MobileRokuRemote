@@ -15,16 +15,16 @@ struct ContentViewMain: View {
     @EnvironmentObject var latestResponse: Response
     @EnvironmentObject var rokuChannelButtons: ObservedRokuButtons
     @EnvironmentObject var text: ObservedText
-    
+    @EnvironmentObject var networkManager: NetworkManager
     @State var currentRemote: RemoteType? = nil
-    
+
     var settingsView: some View {
         VStack {
             ContentViewSettings().padding(.vertical)
             Button(action: {
                 self.settings.save()
                 self.displaySettingsPane.shown.toggle()
-                self.rokuChannelButtons.sendRefreshRequest()
+                self.rokuChannelButtons.set()
             }) {
                 Text("Save")
             }.buttonStyle(DefaultButtonStyle())
@@ -86,8 +86,8 @@ struct ContentViewMain_Previews: PreviewProvider {
     static var previews: some View {
         ContentViewMain()
             .environmentObject(AppDelegate.instance.displaySettingsPane)
-            .environmentObject(AppDelegate.instance.latestRequest)
-            .environmentObject(AppDelegate.instance.latestResponse)
+            .environmentObject(AppDelegate.instance.networkManager.latestRequest)
+            .environmentObject(AppDelegate.instance.networkManager.latestResponse)
             .environmentObject(AppDelegate.instance.rokuChannelButtons)
             .environmentObject(AppDelegate.instance.text)
             .environmentObject(AppDelegate.instance.settings)

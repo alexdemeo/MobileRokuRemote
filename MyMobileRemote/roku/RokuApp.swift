@@ -70,7 +70,6 @@ struct RokuApp_Previews: PreviewProvider {
     static var previews: some View {
         ComponentRokuDevices()
             .environmentObject(AppDelegate.instance.rokuChannelButtons)
-
         //        HStack {
         //            ForEach(RemoteButton.getRokuButtons()) { btn in
         //                HStack {

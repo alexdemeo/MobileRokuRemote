@@ -13,7 +13,7 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -26,8 +26,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 .environmentObject(AppDelegate.instance.displaySettingsPane)
                 .environmentObject(AppDelegate.instance.networkManager.latestRequest)
                 .environmentObject(AppDelegate.instance.networkManager.latestResponse)
-                .environmentObject(AppDelegate.instance.rokuChannelButtons)
                 .environmentObject(AppDelegate.instance.text)
+                .environmentObject(AppDelegate.instance.networkManager)
+                        .environmentObject(AppDelegate.instance.rokuChannelButtons)
+
             window.rootViewController = UIHostingController(rootView: contentView)
             window.makeKeyAndVisible()
             self.window = window
@@ -69,8 +71,8 @@ struct SceneDelegate_Previews: PreviewProvider {
         ContentViewMain()
             .environmentObject(AppDelegate.instance.settings)
             .environmentObject(AppDelegate.instance.displaySettingsPane)
-            .environmentObject(AppDelegate.instance.latestRequest)
-            .environmentObject(AppDelegate.instance.latestResponse)
+            .environmentObject(AppDelegate.instance.networkManager.latestRequest)
+            .environmentObject(AppDelegate.instance.networkManager.latestResponse)
             .environmentObject(AppDelegate.instance.rokuChannelButtons)
             .environmentObject(AppDelegate.instance.text)
             .buttonStyle(BorderlessButtonStyle())
