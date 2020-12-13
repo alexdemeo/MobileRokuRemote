@@ -13,13 +13,25 @@ struct ContentViewSettings: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
+            ComponentRemotePicker()
             HStack {
                 Text("Roku IP")
                 TextField(settings.ipRoku, text: $settings.ipRoku)
 //                    .border(Color.white, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
                     .multilineTextAlignment(.trailing)
             }
-            ComponentRemotePicker()
+            HStack {
+                Text("Default coffee schedule")
+                Spacer()
+                DatePicker("", selection: $settings.coffeeDefaultSchedTime, displayedComponents: .hourAndMinute).labelsHidden()
+            }
+            HStack {
+                Text("Heat notification delay")
+                TextField("", text: $settings.coffeeNotificationDelayMinutes)
+                    .keyboardType(.decimalPad)
+                    .multilineTextAlignment(.trailing)
+                    .labelsHidden()
+            }
         }
     }
 }

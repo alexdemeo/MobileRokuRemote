@@ -7,7 +7,7 @@
 //
 
 import CoreGraphics
-
+import Foundation
 
 //{
 //  "Left" : "Left",
@@ -71,8 +71,10 @@ struct Constants {
                                                                volButtons: true,
                                                                remotes: [
                                                                 RemoteData(title: "Roku", enabled: true),
-                                                                RemoteData(title: "Home", enabled: true)
-                                                               ])
+                                                                RemoteData(title: "Home", enabled: true),
+                                                               ],
+                                                               coffeeDefaultSchedTime: schedTimeFor("8:30", calendar: Calendar.current),
+                                                               coffeeNotificationDelayMinutes: "25")
     
     static let ROKU_APP_QUERY_TIMEOUT_SECONDS: Int  = 5
         

@@ -78,7 +78,7 @@ class ObservedText: ObservableObject {
 }
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var settings: Settings = Settings.load()!
     var displaySettingsPane: DisplaySettingsPane = DisplaySettingsPane()
@@ -88,6 +88,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.rokuChannelButtons.set()
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert], completionHandler: {(granted, error) in
+            DispatchQueue.main.async {
+                if (granted) {
+                    UIApplication.shared.registerForRemoteNotifications()
+                } else{
+                    print("Notification permissions not granted")
+                }
+            }
+        })
         let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setActive(true, options: [])
@@ -101,6 +111,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    //Called when a notification is delivered to a foreground app.
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Swift.Void) {
+        completionHandler([.sound, .banner, .badge])
+    }
+
+    //Called to let your app know which action was selected by the user for a given notification.
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void) {
+        completionHandler()
+    }
     
     
     func clearDefaults() {
