@@ -32,7 +32,7 @@ struct ComponentGroupedView: View {
     var body: some View {
         let grouped = self.groupedViews
         return VStack {
-            ForEach(grouped.indices) { groupIndex in
+            ForEach(grouped.indices, id: \.self) { groupIndex in
                 HStack {
                     ForEach(grouped[groupIndex].indices) { rowIndex in
                         grouped[groupIndex][rowIndex]

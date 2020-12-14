@@ -31,6 +31,7 @@ struct ContentViewSettings: View {
                     .keyboardType(.decimalPad)
                     .multilineTextAlignment(.trailing)
                     .labelsHidden()
+                Text("minutes")
             }
         }
     }

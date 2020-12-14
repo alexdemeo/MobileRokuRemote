@@ -25,12 +25,12 @@ class Response: ObservableObject {
 }
 
 class ObservedRokuButtons: ObservableObject {
-    @Published var buttonsView: AnyView = AnyView(Text("Couldn't load roku apps. Check IP"))
-//    var buttonView: AnyView = AnyView(Text("Couldn't load roku apps. Check IP"))
-    
-    private static func getButtons() -> [RemoteButton] {
-        if let (data, _, _) = AppDelegate.instance.netSync(url: "\(AppDelegate.instance.settings.rokuBaseURL)/query/apps", method: "GET") {
-            print("here")
+    @Published var array: [RemoteButton] = []
+    @Published var buttonToImg: [String: Data?] = [:]
+
+    func requestButtons() {
+        AppDelegate.instance.networkManager.async(url: "\(AppDelegate.instance.settings.rokuBaseURL)/query/apps", method: "GET", header: nil, body: nil) { data, response, error in
+            print("ObservedRokuButtons.requestButtons()")
             var apps: [RokuApp] = []
             if let data = data {
                 let info = String(data: data, encoding: .utf8)
@@ -38,38 +38,24 @@ class ObservedRokuButtons: ObservableObject {
                     RokuApp(line: $0)
                 })
             }
-            print("Made buttons for apps:\n\(apps.map({"\t\($0)"}).joined(separator: "\n"))")
             let buttons = apps.map({
                 RemoteButton(forType: .roku, symbol: $0.name, endpoint: .launch, command: $0.id, associatedApp: $0)
             })
-
-            return buttons
-        } else {
-            return []
+            self.array = buttons
+            
+            self.array.forEach({ remoteButton in
+                let id = remoteButton.associatedApp!.id
+                AppDelegate.instance.networkManager.async(url: "\(AppDelegate.instance.settings.rokuBaseURL)/query/icon/\(id)", method: "GET", header: nil, body: nil) { data, response, error in
+                    guard let response = response else {
+                        self.buttonToImg[id] = nil
+                        return
+                    }
+                    if response.statusCode == 200 {
+                        self.buttonToImg[id] = data!
+                    }
+                }
+            })
         }
-    }
-    
-    func set() {
-        self.buttonsView = ObservedRokuButtons.getGroupedButtonView_slow(array: ObservedRokuButtons.getButtons())
-    }
-    
-    private static func getGroupedButtonView_slow(array: [RemoteButton]) -> AnyView {
-        let inputs = array.filter({ $0.associatedApp?.type == "tvin" })
-        let channels = array.filter({ $0.associatedApp?.type == "appl" })
-        let w =  Constants.CELL_WIDTH / 1.5
-        let h = Constants.CELL_HEIGHT + Constants.SPACING_VERTICAL * 1.75
-        return AnyView(VStack {
-            ComponentGroupedView(inputs.map({ btn in
-                AnyView(Button(action: btn.exec) {
-                    btn.associatedApp!.viewLabeled.frame(width: w, height: h).scaledToFit()
-                })
-            }))
-            ComponentGroupedView(channels.map({ btn in
-                AnyView(Button(action: btn.exec) {
-                    btn.associatedApp!.viewLabelless.frame(width: w, height: h).scaledToFit()
-                })
-            }))
-        })
     }
 }
 
@@ -87,7 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var networkManager: NetworkManager = NetworkManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.rokuChannelButtons.set()
+//        if self.rokuChannelButtons.
+        self.rokuChannelButtons.requestButtons()
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert], completionHandler: {(granted, error) in
             DispatchQueue.main.async {
@@ -180,7 +167,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 self.updateTextFieldFor(character: String(char))
             }
         } else if !e.matches(for: "^/query/apps$").isEmpty {
-            self.rokuChannelButtons.set()
+//            self.rokuChannelButtons.set()
         }
     }
     

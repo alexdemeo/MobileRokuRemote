@@ -8,36 +8,60 @@
 
 import SwiftUI
 
-struct RokuApp {
+
+struct SingleDeviceView: View {
+    @EnvironmentObject var observedRokuButtons: ObservedRokuButtons
+    @EnvironmentObject var networkManager: NetworkManager
+    @EnvironmentObject var settings: Settings
+//    @State var img: AnyView? = nil
+    
+    let app: RokuApp
+    let imgData: Data?
+    let labeled: Bool
+    init(app: RokuApp, imgData: Data?, labeled: Bool) {
+        self.labeled = labeled
+        self.imgData = imgData
+        self.app = app
+    }
+    
+    init(app: RokuApp, imgData: Data?) {
+        self.init(app: app, imgData: imgData, labeled: false)
+    }
+//    AnyView(Image(uiImage: UIImage(data: data!)!)
+    //                                                .renderingMode(.original)
+    //                                                .resizable()
+    //                                                .scaledToFit()
+    //                                                .frame(width: Constants.CELL_WIDTH, height: Constants.CELL_HEIGHT)
+    //                                                .scaleEffect(2))
+    
+    var imgView: AnyView {
+        AnyView(Image(uiImage: UIImage(data: self.imgData!)!)
+            .renderingMode(.original)
+            .resizable()
+            .scaledToFit()
+            .frame(width: Constants.CELL_WIDTH, height: Constants.CELL_HEIGHT)
+            .scaleEffect(2))
+    }
+    
+    var body: some View {
+        if self.imgData == nil {
+            return AnyView(Text("Error"))
+        } else if labeled {
+            return AnyView(VStack(spacing: -4) {
+                self.imgView
+                Text(self.app.name)
+            })
+        } else {
+            return self.imgView
+        }
+    }
+}
+
+class RokuApp {
     let id: String
     let type: String
     let version: String
     let name: String
-    
-    var viewLabelless: some View {
-        if let imgData = AppDelegate.instance.netSync(url: "\(AppDelegate.instance.settings.rokuBaseURL)/query/icon/\(self.id)", method: "GET") {
-            guard let resp = imgData.1 else {
-                return AnyView(Text(self.name))
-            }
-            if resp.statusCode == 200 {
-                return AnyView(Image(uiImage: UIImage(data: imgData.0!)!)
-                    .renderingMode(.original)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: Constants.CELL_WIDTH, height: Constants.CELL_HEIGHT)
-                    .scaleEffect(2))
-            }
-        }
-        // currently same error text if reply fails or reply has bad statusCode. Should probably separate these
-        return AnyView(Text("ERROR"))
-    }
-    
-    var viewLabeled: some View {
-        VStack(spacing: -4) {
-            self.viewLabelless
-            Text(self.name)
-        }
-    }
     
     init(line: String) {
         let parts = line.replacingOccurrences(of: "\"", with: "").split(separator: " ")
@@ -70,14 +94,5 @@ struct RokuApp_Previews: PreviewProvider {
     static var previews: some View {
         ComponentRokuDevices()
             .environmentObject(AppDelegate.instance.rokuChannelButtons)
-        //        HStack {
-        //            ForEach(RemoteButton.getRokuButtons()) { btn in
-        //                HStack {
-        //                    Button(action: btn.exec) {
-        //                        btn.associatedApp!.view
-        //                    }
-        //                }
-        //            }
-        //        }
     }
 }

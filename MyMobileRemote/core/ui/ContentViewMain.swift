@@ -24,7 +24,7 @@ struct ContentViewMain: View {
             Button(action: {
                 self.settings.save()
                 self.displaySettingsPane.shown.toggle()
-                self.rokuChannelButtons.set()
+//                self.rokuChannelButtons.set()
             }) {
                 Text("Save")
             }.buttonStyle(DefaultButtonStyle())
@@ -58,25 +58,19 @@ struct ContentViewMain: View {
                         if remote.title == "Roku" {
                             ScrollView {
                                 ContentViewRoku()
-                                    .tabItem {
-                                        Text("Roku")
-                                    }.onTapGesture {
-                                        self.currentRemote = .roku
-                                    }.tag(RemoteType.roku)
-                            }
+                            }.tabItem {
+                                Text("Roku")
+                            }.tag(RemoteType.roku)
                         } else if remote.title == "Home" {
                             ScrollView {
                                 ContentViewHome()
-                                    .tabItem {
-                                        Text("Home")
-                                    }.onTapGesture {
-                                        self.currentRemote = .home
-                                    }.tag(RemoteType.home)
-                            }
+                            }.tabItem {
+                                Text("Home")
+                            }.tag(RemoteType.home)
                         }
                     }
                 }
-            }.tabViewStyle(PageTabViewStyle())
+            }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic)).id(self.currentRemote?.rawValue ?? "null")
         }
         .padding(.top).frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     }

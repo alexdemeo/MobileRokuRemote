@@ -53,37 +53,6 @@ struct RemoteButton : Identifiable {
                 return
             }
             AppDelegate.instance.handleAsyncRokuResponseFrom(endpoint: endpoint, withResponse: response!) // ik this is bad programming, currently too lazy to fix it
-//            guard let response = response else {
-//                return
-//            }
-//            guard let e = response.url?.absoluteString else {
-//                return
-//            }
-//            print("Result from endpoint: \(e) statusCode: \(response.statusCode)")
-//            if !e.matches(for: "^(?i)\\/(keypress)?\\/?volume\\/?(up|down)$").isEmpty
-//                && response.statusCode == 200 {
-//                // if it's a volume endpoint
-//                if e.lowercased().contains("up") {
-//                } else if e.lowercased().contains("down") {
-//                } else if e.lowercased().contains("Lit_") {
-//                    let char = e.split(separator: "_")[1]
-//                    AppDelegate.instance.updateTextFieldFor(character: String(char))
-//                }
-//            } else if !e.matches(for: "^/query/apps$").isEmpty {
-//                print("here")
-//                var apps: [RokuApp] = []
-//                if let data = data {
-//                    let info = String(data: data, encoding: .utf8)
-//                    apps = info!.matches(for: "<app.*<\\/app>").map({
-//                        RokuApp(line: $0)
-//                    })
-//                }
-//                print("Made buttons for apps:\n\(apps.map({"\t\($0)"}).joined(separator: "\n"))")
-//                let buttons = apps.map({
-//                    RemoteButton(forType: .roku, symbol: $0.name, endpoint: .launch, command: $0.id, associatedApp: $0)
-//                })
-//                AppDelegate.instance.rokuChannelButtons.updateFor(array: buttons)
-//            }
         }
     }
 }
