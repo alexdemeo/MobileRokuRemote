@@ -73,8 +73,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var networkManager: NetworkManager = NetworkManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        if self.rokuChannelButtons.
-        self.rokuChannelButtons.requestButtons()
+        if settings.remotes.contains(where: { $0.title == "Roku" && $0.enabled}) {
+            self.rokuChannelButtons.requestButtons()
+        }
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert], completionHandler: {(granted, error) in
             DispatchQueue.main.async {

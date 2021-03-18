@@ -24,7 +24,6 @@ struct ContentViewMain: View {
             Button(action: {
                 self.settings.save()
                 self.displaySettingsPane.shown.toggle()
-//                self.rokuChannelButtons.set()
             }) {
                 Text("Save")
             }.buttonStyle(DefaultButtonStyle())
@@ -32,8 +31,17 @@ struct ContentViewMain: View {
     }
     
     var body: some View {
-//        let command: String = AppDelegate.sanitizeURL(url: latestRequest.request?.url?.absoluteString ?? "") ?? "error"
-        let command: String = latestRequest.request?.url?.absoluteString ?? "error"
+        var hostAbbrev: String = "UNKNOWN";
+        let host = latestRequest.request?.url?.host
+        // this sometimes multiline status was shifting things down
+        // so this is a hacky fix for that. Should get a more wholesome
+        // scalable solution in the future
+        if (host == settings.ipRoku) {
+            hostAbbrev = "ROKU"
+        } else if (pi3URL.contains(host ?? "FORCE_FAIL")) {
+            hostAbbrev = "COFFEE"
+        }
+        let command: String = hostAbbrev + (latestRequest.request?.url?.path ?? "/error")
         var success = latestResponse.error == nil
         if let resp = latestResponse.response {
             let statusCode = resp.statusCode

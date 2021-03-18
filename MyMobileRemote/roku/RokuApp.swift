@@ -13,7 +13,6 @@ struct SingleDeviceView: View {
     @EnvironmentObject var observedRokuButtons: ObservedRokuButtons
     @EnvironmentObject var networkManager: NetworkManager
     @EnvironmentObject var settings: Settings
-//    @State var img: AnyView? = nil
     
     let app: RokuApp
     let imgData: Data?
@@ -27,12 +26,6 @@ struct SingleDeviceView: View {
     init(app: RokuApp, imgData: Data?) {
         self.init(app: app, imgData: imgData, labeled: false)
     }
-//    AnyView(Image(uiImage: UIImage(data: data!)!)
-    //                                                .renderingMode(.original)
-    //                                                .resizable()
-    //                                                .scaledToFit()
-    //                                                .frame(width: Constants.CELL_WIDTH, height: Constants.CELL_HEIGHT)
-    //                                                .scaleEffect(2))
     
     var imgView: AnyView {
         AnyView(Image(uiImage: UIImage(data: self.imgData!)!)
