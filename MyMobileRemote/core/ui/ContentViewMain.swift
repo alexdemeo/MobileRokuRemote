@@ -50,7 +50,6 @@ struct ContentViewMain: View {
         let msg = success ? nil :
             latestResponse.data == nil ? latestResponse.error?.localizedDescription : String(data: latestResponse.data!, encoding: .utf8)
         return VStack {
-            Spacer(minLength: Constants.CELL_HEIGHT / 2)
             if self.displaySettingsPane.shown {
                 self.settingsView
             } else {
@@ -64,13 +63,13 @@ struct ContentViewMain: View {
                 ForEach(self.settings.remotes, id: \.title) { remote in
                     if remote.enabled {
                         if remote.title == "Roku" {
-                            ScrollView {
+                            ScrollView(.vertical, showsIndicators: false) {
                                 ContentViewRoku()
                             }.tabItem {
                                 Text("Roku")
                             }.tag(RemoteType.roku)
                         } else if remote.title == "Home" {
-                            ScrollView {
+                            ScrollView(.vertical, showsIndicators: false) {
                                 ContentViewHome()
                             }.tabItem {
                                 Text("Home")
@@ -80,7 +79,7 @@ struct ContentViewMain: View {
                 }
             }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic)).id(self.currentRemote?.rawValue ?? "null")
         }
-        .padding(.top).frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        .padding(.top)
     }
 }
 

@@ -112,6 +112,7 @@
 		EF7D2CF7252C2D8900E56AB2 /* CompKeyboardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompKeyboardPanel.swift; sourceTree = "<group>"; };
 		EFB84AA6254608AE005B2C3A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		EFB84AA8254608AE005B2C3A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		EFC95CEB26103E4800F9FD68 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		EFDB399F25775D5B005DB39A /* CompCoffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompCoffee.swift; sourceTree = "<group>"; };
 		EFE67CB6257238340016EF74 /* CompRemotePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompRemotePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -313,6 +314,7 @@
 		EFB84AA5254608AE005B2C3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFC95CEB26103E4800F9FD68 /* UserNotifications.framework */,
 				EFB84AA6254608AE005B2C3A /* WidgetKit.framework */,
 				EFB84AA8254608AE005B2C3A /* SwiftUI.framework */,
 			);
@@ -650,7 +652,6 @@
 		EF3069F924B41D2800F3C7E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MyMobileRemote/Preview Content\"";
@@ -672,7 +673,6 @@
 		EF3069FA24B41D2800F3C7E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MyMobileRemote/Preview Content\"";

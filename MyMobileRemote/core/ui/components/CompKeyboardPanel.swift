@@ -12,11 +12,11 @@ struct ListeningTextField: UIViewRepresentable {
     let keyboardType: UIKeyboardType
     
     func makeUIView(context: Context) -> UITextField {
-        let textField = UITextField(frame: .zero)
+        let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.keyboardType = self.keyboardType
         textField.delegate = context.coordinator
-//        textField.placeholder = "Type:"
+        textField.autocapitalizationType = .none
         textField.textAlignment = .center
         textField.text = " "
         _ = NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: textField)
@@ -49,12 +49,12 @@ struct ListeningTextField: UIViewRepresentable {
         }
         
         func onKey(_ textField: UITextField, key: String) {
-//            if key == "\n" {
+//            if key != "\n" {
 //                print("onKey(\(key))")
 //            } else {
 //                print("onKey(return)")
 //            }
-            let allowedKeys = "abcdefghijklmnopqrstuvwxyzABCDEFHIJKLMNOPQRSTUVWXYZ1234567890"
+            let allowedKeys = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%,.<>/?;:'"
             if key.count == 1 && allowedKeys.contains(key) {
                 RemoteButton(forType: .roku, symbol: key, endpoint: .keypress, command: "Lit_\(key)").exec()
             } else if key == " " {
