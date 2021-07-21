@@ -40,6 +40,8 @@ struct ContentViewMain: View {
             hostAbbrev = "ROKU"
         } else if (pi3URL.contains(host ?? "FORCE_FAIL")) {
             hostAbbrev = "COFFEE"
+        }  else if (pi2URL.contains(host ?? "FORCE_FAIL")) {
+            hostAbbrev = "PRINTER"
         }
         let command: String = hostAbbrev + (latestRequest.request?.url?.path ?? "/error")
         var success = latestResponse.error == nil

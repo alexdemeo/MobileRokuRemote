@@ -91,7 +91,7 @@ struct ComponentCoffee: View {
     var body: some View {
         let time = Calendar.current.dateComponents([.hour, .minute], from: self.settings.coffeeDefaultSchedTime)
         
-        return VStack(alignment: .leading, spacing: 20) {
+        return VStack(alignment: .center, spacing: 20) {
 //            if self.timeSeconds >= 0 {
 //                Text(self.timeStr(self.timeSeconds))
 //            }
@@ -116,7 +116,7 @@ struct ComponentCoffee: View {
                 }
             }
  
-        }.padding(.all).frame(width: Constants.REMOTE_WIDTH / 2, height: Constants.REMOTE_HEIGHT, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        }.padding(.all).frame(width: Constants.REMOTE_WIDTH / 2, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .onReceive(timer) { time in
             if self.timeSeconds >= 0 {
                 self.timeSeconds += 1

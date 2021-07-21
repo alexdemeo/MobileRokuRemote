@@ -33,6 +33,7 @@
 		EF7D2CE8252C1C7900E56AB2 /* CompTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CE2252C1C7900E56AB2 /* CompTop.swift */; };
 		EF7D2CED252C1CAF00E56AB2 /* RokuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CEC252C1CAF00E56AB2 /* RokuApp.swift */; };
 		EF7D2CF8252C2D8900E56AB2 /* CompKeyboardPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D2CF7252C2D8900E56AB2 /* CompKeyboardPanel.swift */; };
+		EF80804A26A7A5030017934D /* CompPrinterStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF80804926A7A5030017934D /* CompPrinterStation.swift */; };
 		EFDB39A025775D5B005DB39A /* CompCoffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB399F25775D5B005DB39A /* CompCoffee.swift */; };
 		EFE67CB7257238340016EF74 /* CompRemotePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE67CB6257238340016EF74 /* CompRemotePicker.swift */; };
 /* End PBXBuildFile section */
@@ -110,6 +111,7 @@
 		EF7D2CE2252C1C7900E56AB2 /* CompTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompTop.swift; sourceTree = "<group>"; };
 		EF7D2CEC252C1CAF00E56AB2 /* RokuApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RokuApp.swift; sourceTree = "<group>"; };
 		EF7D2CF7252C2D8900E56AB2 /* CompKeyboardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompKeyboardPanel.swift; sourceTree = "<group>"; };
+		EF80804926A7A5030017934D /* CompPrinterStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompPrinterStation.swift; sourceTree = "<group>"; };
 		EFB84AA6254608AE005B2C3A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		EFB84AA8254608AE005B2C3A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		EFC95CEB26103E4800F9FD68 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -325,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				EFDB399F25775D5B005DB39A /* CompCoffee.swift */,
+				EF80804926A7A5030017934D /* CompPrinterStation.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				EF7D2CED252C1CAF00E56AB2 /* RokuApp.swift in Sources */,
 				EF1C6E192572271C00A85236 /* NetworkManager.swift in Sources */,
 				EF306A0F24B41D4B00F3C7E7 /* Buttons.swift in Sources */,
+				EF80804A26A7A5030017934D /* CompPrinterStation.swift in Sources */,
 				EF1C6E002572242800A85236 /* ContentViewRoku.swift in Sources */,
 				EF28950024B426C2005E0CB8 /* AppDelegate.swift in Sources */,
 				EF306A1124B41D4B00F3C7E7 /* RemoteTypes.swift in Sources */,
