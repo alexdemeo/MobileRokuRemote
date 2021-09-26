@@ -17,21 +17,21 @@ struct ComponentTop: View {
     var body: some View {
         VStack(alignment: .center, spacing: Constants.SPACING_VERTICAL) {
             HStack(alignment: .top) {
-                Button(action: buttonVolumeUp.exec) {
-                    Text(buttonVolumeUp.symbol).padding(.leading, 1)
-                }.scaleEffect(/*@START_MENU_TOKEN@*/2.0/*@END_MENU_TOKEN@*/)
+                RepeatingButton(action: buttonVolumeUp.exec) {
+                    Text(buttonVolumeUp.symbol)
+                }.padding(.leading, 1).scaleEffect(/*@START_MENU_TOKEN@*/2.0/*@END_MENU_TOKEN@*/)
                 Spacer().frame(width: Constants.CELL_WIDTH)
                 Button(action: buttonPower.exec) {
                     Text(buttonPower.symbol)
                 }.scaleEffect(2.0)
             }
             HStack(alignment: .top) {
-                Button(action: buttonVolumeDown.exec) {
+                RepeatingButton(action: buttonVolumeDown.exec) {
                     Text(buttonVolumeDown.symbol)
-                }.scaleEffect(/*@START_MENU_TOKEN@*/2.0/*@END_MENU_TOKEN@*/)
+                }.scaleEffect(/*@START_MENU_TOKEN@*/2.0/*@END_MENU_TOKEN@*/).padding(.top, 10)
                 Spacer().frame(width: Constants.CELL_WIDTH)
                 Button(action:buttonMute.exec) {
-                    Text(buttonMute.symbol).padding(.leading, 2)
+                    Text(buttonMute.symbol).padding(.leading, 4).padding(.top, 10)
                 }.scaleEffect(/*@START_MENU_TOKEN@*/2.0/*@END_MENU_TOKEN@*/)
             }
         }
